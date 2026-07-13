@@ -634,7 +634,42 @@ nav.light .nav-icon svg{stroke:var(--mid)}
   border-left:3px solid var(--teal);border-radius:4px;padding:12px 16px;margin-bottom:22px;
 }
 .aud-req b{color:var(--ink);font-weight:700}
+.aud-chip-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;max-width:560px}
+.aud-chip{
+  display:flex;gap:11px;align-items:flex-start;background:var(--light);
+  border-radius:10px;padding:14px 16px;transition:background .18s,transform .15s;
+}
+.aud-chip:hover{background:var(--teal-pale);transform:translateY(-1px)}
+.aud-chip .emo{font-size:19px;line-height:1.2;flex-shrink:0}
+.aud-chip b{display:block;font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.aud-chip small{font-size:11px;color:var(--mid);line-height:1.4;display:block}
+.aud-req-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;max-width:560px}
+.aud-req-tags span{
+  font-size:11.5px;font-weight:600;color:var(--teal);background:var(--teal-pale);
+  border-radius:20px;padding:6px 13px;white-space:nowrap;
+}
 .aud-icon-box{width:120px;height:120px;border-radius:50%;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* Product Portfolio rows */
+.pp-row{
+  display:grid;grid-template-columns:170px 1fr;gap:32px;align-items:center;
+  padding:28px;border-radius:14px;margin-bottom:14px;border:1px solid var(--border);
+}
+.pp-row.alt{background:var(--light);border-color:transparent}
+.pp-img{width:100%;height:130px;border-radius:10px;background:linear-gradient(135deg,#eef1f4,#dde3e8);display:flex;align-items:center;justify-content:center}
+.pp-badge{display:inline-block;font-size:10.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:20px;padding:4px 11px;margin-bottom:9px}
+.pp-name{font-family:'Poppins',sans-serif;font-size:17px;font-weight:800;margin-bottom:5px}
+.pp-tag{font-size:12px;font-weight:700;color:var(--teal);margin-bottom:9px}
+.pp-desc{font-size:12.5px;color:var(--mid);line-height:1.65;margin-bottom:15px;max-width:520px}
+.pp-more{
+  display:inline-flex;align-items:center;gap:8px;background:#0d1e2e;color:#fff;
+  font-size:12px;font-weight:700;padding:9px 17px;border-radius:6px;text-decoration:none;cursor:pointer;
+  transition:background .18s;
+}
+.pp-more:hover{background:#1a2d3a}
+@media (max-width:700px){
+  .pp-row{grid-template-columns:1fr}
+}
 
 /* Who We Serve cards on Home page */
 .serve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -650,6 +685,7 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 
 @media (max-width:900px){
   .aud-panel-grid{grid-template-columns:1fr}
+  .aud-chip-grid{grid-template-columns:1fr}
   .aud-icon-box{display:none}
   .serve-grid{grid-template-columns:1fr 1fr}
 }
@@ -1050,7 +1086,7 @@ nav.light .nav-icon svg{stroke:var(--mid)}
       <!-- Who We Serve -->
       <div id="who-we-serve" style="margin-bottom:70px">
         <div class="sec-title" style="margin-bottom:7px">Who We Serve</div>
-        <p class="sec-sub">CleanChain works with four kinds of partners — find the path that fits you.</p>
+        <p class="sec-sub">Four ways to team up with CleanChain — pick your lane.</p>
         <div class="aud-tabs">
           <button class="aud-tab active" data-aud="distributor" onclick="selectAudience('distributor')">Distributor</button>
           <button class="aud-tab" data-aud="owner" onclick="selectAudience('owner')">Laundromat Owner</button>
@@ -1062,15 +1098,14 @@ nav.light .nav-icon svg{stroke:var(--mid)}
           <div class="aud-panel-grid">
             <div>
               <h3 class="aud-h">Become a Regional Distributor</h3>
-              <p class="aud-p">This model suits companies that already have experience with commercial equipment, laundry distribution channels, or B2B agency work — the focus is on developing and selling into a regional market.</p>
-              <ul class="aud-list">
-                <li><b>Regional Sales Rights</b> — exclusive rights to sell Takurox equipment within a designated country, city, or region</li>
-                <li><b>Dedicated Pricing &amp; Support</b> — access to distributor-exclusive pricing, plus quoting support for large-scale projects</li>
-                <li><b>Lead Referrals</b> — CleanChain may assign potential customer leads to distributors based on region or project type</li>
-                <li><b>Brand Assets</b> — authorized use of Takurox and CleanChain branding materials, catalogs, videos, and display assets</li>
-                <li><b>Training &amp; Demonstration</b> — product spec and sales training, with demo units or trade show support for qualified partners</li>
-              </ul>
-              <div class="aud-req"><b>Recommended requirements:</b> an established B2B customer base (e.g. hotels, healthcare, property management), basic after-sales repair or installation capability, and willingness to commit to annual sales targets.</div>
+              <p class="aud-p">Sell Takurox equipment in your market — territory, pricing, and leads included.</p>
+              <div class="aud-chip-grid">
+                <div class="aud-chip"><span class="emo">🗺️</span><div><b>Regional Rights</b><small>Exclusive sales territory</small></div></div>
+                <div class="aud-chip"><span class="emo">💰</span><div><b>Distributor Pricing</b><small>Special rates + project quotes</small></div></div>
+                <div class="aud-chip"><span class="emo">🎯</span><div><b>Warm Leads</b><small>Regional leads sent your way</small></div></div>
+                <div class="aud-chip"><span class="emo">🎓</span><div><b>Sales Training</b><small>Specs, pitch &amp; demo support</small></div></div>
+              </div>
+              <div class="aud-req-tags"><span>B2B customer base</span><span>Basic install/repair</span><span>Annual sales target</span></div>
               <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Apply to Become a Distributor ›</button>
             </div>
             <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
@@ -1081,12 +1116,12 @@ nav.light .nav-icon svg{stroke:var(--mid)}
           <div class="aud-panel-grid">
             <div>
               <h3 class="aud-h">Laundromat Owner / Investor</h3>
-              <p class="aud-p">For existing store owners or investors looking to enter the self-service laundry market — the focus is on cost reduction, efficiency gains, and brand upgrades.</p>
-              <ul class="aud-list">
-                <li><b>Equipment Upgrade Incentives</b> — special pricing programs for existing owners replacing old equipment or expanding their store</li>
-                <li><b>Demo Store Partnership</b> — qualified, high-performing locations may become a Takurox regional demo store, with additional marketing and promotional resources</li>
-                <li><b>Store Expansion Support</b> — assistance with floor-plan efficiency and wash-to-dry ratio design to reduce investment risk</li>
-              </ul>
+              <p class="aud-p">Upgrade your store, cut costs, go Takurox.</p>
+              <div class="aud-chip-grid">
+                <div class="aud-chip"><span class="emo">🔧</span><div><b>Upgrade Pricing</b><small>Special rates on new equipment</small></div></div>
+                <div class="aud-chip"><span class="emo">🏆</span><div><b>Demo Store</b><small>Become a regional showcase</small></div></div>
+                <div class="aud-chip"><span class="emo">📐</span><div><b>Layout Support</b><small>Smarter floor plans, less risk</small></div></div>
+              </div>
               <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Get a Laundromat Quote ›</button>
             </div>
             <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="var(--teal)" stroke="none"/></svg></div>
@@ -1097,13 +1132,13 @@ nav.light .nav-icon svg{stroke:var(--mid)}
           <div class="aud-panel-grid">
             <div>
               <h3 class="aud-h">On-Premise Laundry (OPL) Solutions</h3>
-              <p class="aud-p">For hotels, hospitals, factories, dormitories, and gyms — this is a complete laundry solution, not simple equipment distribution.</p>
-              <ul class="aud-list">
-                <li><b>Custom Planning</b> — professional equipment selection and workflow layout recommendations based on wash volume, linen type, and space constraints</li>
-                <li><b>Operating Cost Analysis</b> — help comparing the cost and benefit of outsourced laundry service versus building an in-house laundry room</li>
-                <li><b>Service Level Agreements (SLA)</b> — tiered routine maintenance and emergency repair plans to keep operations running without interruption</li>
-              </ul>
-              <div class="aud-req"><b>Recommended requirements:</b> the facility must meet code requirements for water, electricity, gas, and ventilation, and designate an internal operations lead.</div>
+              <p class="aud-p">One partner, one system — from planning to maintenance.</p>
+              <div class="aud-chip-grid">
+                <div class="aud-chip"><span class="emo">📋</span><div><b>Custom Planning</b><small>Sized to your space &amp; volume</small></div></div>
+                <div class="aud-chip"><span class="emo">📊</span><div><b>Cost Analysis</b><small>Outsource vs. in-house, compared</small></div></div>
+                <div class="aud-chip"><span class="emo">🛠️</span><div><b>SLA Plans</b><small>Maintenance tiers that fit your ops</small></div></div>
+              </div>
+              <div class="aud-req-tags"><span>Code-compliant utilities</span><span>Named ops lead</span></div>
               <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Request an OPL Consultation ›</button>
             </div>
             <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><line x1="7" y1="6" x2="10" y2="6"/></svg></div>
@@ -1114,13 +1149,13 @@ nav.light .nav-icon svg{stroke:var(--mid)}
           <div class="aud-panel-grid">
             <div>
               <h3 class="aud-h">Authorized Service Provider (ASP)</h3>
-              <p class="aud-p">Suited for electromechanical engineering firms or technical teams focused on installation, repair, and maintenance — equipment sales is not required.</p>
-              <ul class="aud-list">
-                <li><b>Factory-Certified Badge</b> — use the "Authorized Service Partner" badge on your website or business cards to build technical credibility</li>
-                <li><b>Service Case Assignment</b> — take on regional warranty or repair cases assigned by CleanChain</li>
-                <li><b>Parts Sourcing &amp; Technical Support</b> — priority access to genuine parts and consumables, plus a direct line to CleanChain's technical team for major issues</li>
-              </ul>
-              <div class="aud-req"><b>Recommended requirements:</b> experience repairing commercial equipment or appliances, qualified technicians and tools on hand, and the ability to commit to 24–72 hour on-site response times.</div>
+              <p class="aud-p">Get certified. Get cases. Get paid to fix what we build.</p>
+              <div class="aud-chip-grid">
+                <div class="aud-chip"><span class="emo">🏅</span><div><b>Certified Badge</b><small>Official ASP credibility</small></div></div>
+                <div class="aud-chip"><span class="emo">🧰</span><div><b>Service Cases</b><small>Regional jobs sent your way</small></div></div>
+                <div class="aud-chip"><span class="emo">⚡</span><div><b>Parts &amp; Support</b><small>Priority access, direct line</small></div></div>
+              </div>
+              <div class="aud-req-tags"><span>Repair experience</span><span>Certified techs</span><span>24–72h response</span></div>
               <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Apply to Become an ASP Partner ›</button>
             </div>
             <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><path d="M14.7 6.3a4 4 0 01-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 015.4-5.4z"/></svg></div>
@@ -1130,7 +1165,7 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 
       <!-- Partner Benefits -->
       <div class="sec-title">Partner Benefits</div>
-      <p class="sec-sub">The four pillars of support behind every CleanChain partnership.</p>
+      <p class="sec-sub">Three pillars of support behind every CleanChain partnership.</p>
       <div class="feat-grid" style="margin-bottom:64px">
         <div class="feat-card">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
@@ -1141,11 +1176,6 @@ nav.light .nav-icon svg{stroke:var(--mid)}
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <div class="feat-h">Professional Layout Planning</div>
           <p class="feat-p">We help partners with site layout and workflow design, ensuring every square foot of space works toward profitability.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v4H4zM4 12h10v8H4zM17 12h3v8h-3z"/></svg></div>
-          <div class="feat-h">Complete Marketing Resources</div>
-          <p class="feat-p">Brand assets, go-to-market strategy, and promotional campaign support to help partners build local brand awareness quickly.</p>
         </div>
         <div class="feat-card">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
@@ -1180,26 +1210,75 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 
       <!-- Product Portfolio -->
       <div class="sec-title">Product Portfolio</div>
-      <p class="sec-sub">The Takurox On-Premise Laundry equipment range partners can offer.</p>
-      <div style="display:flex;gap:32px;margin-bottom:64px;align-items:flex-start">
-        <div style="flex:0 0 280px;background:linear-gradient(160deg,#0d1e2e,#1a2d3a);border-radius:12px;overflow:hidden">
-          <div style="padding:22px 22px 18px;border-bottom:1px solid rgba(255,255,255,.1)">
-            <div style="color:#fff;font-family:'Poppins',sans-serif;font-size:17px;font-weight:800;margin-bottom:4px">Automatic Laundry Equipment</div>
-            <div style="color:rgba(255,255,255,.5);font-size:12px">On-Premise Laundry</div>
-          </div>
+      <p class="sec-sub" style="margin-bottom:36px">The Takurox equipment range partners can offer.</p>
+      <div style="margin-bottom:64px">
+
+        <div class="pp-row">
+          <div class="pp-img"><svg width="90" height="90" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><circle cx="40" cy="40" r="32"/><circle cx="40" cy="40" r="19"/><circle cx="40" cy="40" r="6"/></svg></div>
           <div>
-            <div style="padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Suspended-Rail Washer</div>
-            <div style="padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Large-Capacity Washer</div>
-            <div style="padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Barrier Washer</div>
-            <div style="padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Washer-Extractor-Dryer Combo</div>
-            <div style="padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Barrier Washer-Extractor-Dryer Combo</div>
-            <div style="padding:16px 22px;color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background='transparent'">Dryer</div>
+            <span class="pp-badge">On-Premise Laundry</span>
+            <div class="pp-name">Suspended-Rail Washer</div>
+            <div class="pp-tag">Built to run — steady power, cycle after cycle.</div>
+            <p class="pp-desc">Protected-drum design with strong extraction cuts drying time and holds peak wash quality under sustained, high-intensity use.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
           </div>
         </div>
-        <div style="flex:1;padding-top:6px">
-          <p style="font-size:13.5px;color:var(--mid);line-height:1.8;margin-bottom:18px">Takurox's OPL lineup covers the full workflow of an institutional laundry room — from soiled-linen intake through washing, extraction, and drying — including barrier models that physically separate the "dirty side" and "clean side" of the room to meet hygiene compliance standards for hotels, hospitals, and healthcare facilities.</p>
-          <p style="font-size:13.5px;color:var(--mid);line-height:1.8">Partners can reference this category list when scoping a proposal for a laundromat, distributor deal, or OPL facility — full specifications and capacity options are available on request.</p>
+
+        <div class="pp-row alt">
+          <div class="pp-img"><svg width="94" height="94" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><circle cx="40" cy="40" r="35"/><circle cx="40" cy="40" r="22"/><circle cx="40" cy="40" r="7"/></svg></div>
+          <div>
+            <span class="pp-badge">On-Premise Laundry</span>
+            <div class="pp-name">Large-Capacity Washer</div>
+            <div class="pp-tag">Bigger loads, fewer cycles.</div>
+            <p class="pp-desc">Handles large linen and textile loads in a single run, cutting cycle count and labor time for high-volume facilities.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
+          </div>
         </div>
+
+        <div class="pp-row">
+          <div class="pp-img"><svg width="90" height="90" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><rect x="10" y="14" width="60" height="52" rx="6"/><line x1="40" y1="14" x2="40" y2="66"/><circle cx="26" cy="40" r="11"/><circle cx="54" cy="40" r="11"/></svg></div>
+          <div>
+            <span class="pp-badge">On-Premise Laundry</span>
+            <div class="pp-name">Barrier Washer</div>
+            <div class="pp-tag">Clean side. Dirty side. Never the two shall meet.</div>
+            <p class="pp-desc">Physically separates soiled input from clean output — built for food, pharma, and healthcare facilities with strict hygiene rules.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="pp-row alt">
+          <div class="pp-img"><svg width="90" height="90" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><rect x="14" y="8" width="52" height="64" rx="6"/><circle cx="40" cy="30" r="14"/><circle cx="40" cy="58" r="7"/></svg></div>
+          <div>
+            <span class="pp-badge">Coin-Operated</span>
+            <div class="pp-name">Washer-Extractor-Dryer Combo</div>
+            <div class="pp-tag">Wash, extract, dry — one machine, half the footprint.</div>
+            <p class="pp-desc">All three steps in a single unit, cutting install space roughly in half and skipping the transfer-to-dryer step entirely.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="pp-row">
+          <div class="pp-img"><svg width="90" height="90" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><rect x="14" y="8" width="52" height="64" rx="6"/><line x1="40" y1="8" x2="40" y2="72"/><circle cx="40" cy="30" r="13"/><circle cx="40" cy="58" r="6"/></svg></div>
+          <div>
+            <span class="pp-badge">On-Premise Laundry</span>
+            <div class="pp-name">Barrier Washer-Extractor-Dryer Combo</div>
+            <div class="pp-tag">Full wash-to-dry cycle, zero cross-contamination.</div>
+            <p class="pp-desc">Combines the complete wash-extract-dry cycle with barrier-grade separation — built for biotech, pharma, and food-processing sites.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="pp-row alt">
+          <div class="pp-img"><svg width="88" height="88" viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.3"><rect x="16" y="18" width="48" height="46" rx="6"/><circle cx="40" cy="42" r="14"/><line x1="26" y1="26" x2="34" y2="26"/></svg></div>
+          <div>
+            <span class="pp-badge">Coin-Operated</span>
+            <div class="pp-name">Dryer</div>
+            <div class="pp-tag">Stronger drying, next-gen efficiency.</div>
+            <p class="pp-desc">Independent inverter-controlled drum and exhaust fan boost drying efficiency while treating fabrics gently — shorter cycles, lower energy use.</p>
+            <a class="pp-more" onclick="goToContact()">VIEW MORE <span>→</span></a>
+          </div>
+        </div>
+
       </div>
 
       <!-- Support & Service -->
