@@ -334,7 +334,7 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 .aud-tab:hover{color:var(--ink)}
 .aud-tab.active{color:var(--teal);border-bottom-color:var(--teal)}
 .aud-panel-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.aud-h{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;margin-bottom:12px}
+.aud-h{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
 .aud-p{font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:18px;max-width:560px}
 .aud-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
 .aud-list li{font-size:13px;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
@@ -350,6 +350,22 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 .aud-req-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;max-width:560px}
 .aud-req-tags span{font-size:11.5px;font-weight:600;color:var(--teal);background:var(--teal-pale);border-radius:20px;padding:6px 13px;white-space:nowrap;}
 .aud-icon-box{width:120px;height:120px;border-radius:50%;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wws-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:76px}
+.wws-row .wws-photo{order:2}
+.wws-row.reverse .wws-photo{order:-1}
+.wws-photo{width:100%;aspect-ratio:4/3.3;border-radius:10px;background-size:cover;background-position:center;box-shadow:0 14px 34px rgba(20,30,60,.12)}
+.wws-list{display:flex;flex-direction:column;gap:16px;margin:20px 0 26px}
+.wws-item-title{font-size:14px;font-weight:700;color:var(--teal);display:flex;gap:8px;align-items:baseline}
+.wws-item-title .dot{font-size:10px}
+.wws-item-desc{font-size:13.5px;color:var(--mid);line-height:1.6;margin:3px 0 0 18px}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:64px;text-align:center}
+.benefit-icon{margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
+.benefit-h{font-size:15px;font-weight:700;margin-bottom:8px}
+.benefit-p{font-size:13.5px;color:var(--mid);line-height:1.65;max-width:300px;margin:0 auto}
+.support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:64px}
+.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:26px 22px;box-shadow:0 2px 10px rgba(20,30,60,.05);transition:border-color .2s,transform .2s}
+.support-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+@media (max-width:900px){.wws-row{grid-template-columns:1fr}.wws-row .wws-photo{order:-1!important}.benefit-grid{grid-template-columns:1fr}.support-grid{grid-template-columns:1fr 1fr}}
 .pp-row{display:grid;grid-template-columns:170px 1fr;gap:32px;align-items:center;padding:28px;border-radius:14px;margin-bottom:14px;border:1px solid var(--border);}
 .pp-row.alt{background:var(--light);border-color:transparent}
 .pp-img{width:100%;height:130px;border-radius:10px;background:linear-gradient(135deg,#eef1f4,#dde3e8);display:flex;align-items:center;justify-content:center}
@@ -385,137 +401,124 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 <div id="site" style="display:block">
 
   <nav id="nav" class="light" style="top:0">
-    <div class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 20 20" fill="none">
-          <circle cx="10" cy="10" r="8" stroke="#2F6FED" stroke-width="1.5"/>
-          <circle cx="10" cy="10" r="4" stroke="#2F6FED" stroke-width="1.5"/>
-          <circle cx="10" cy="10" r="1.5" fill="#2F6FED"/>
-        </svg>
-      </div>
-      <span class="logo-word">CC⁺ cleanchain⁺</span>
-      <span style="font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--mid);background:var(--light);border:1px solid var(--border);border-radius:4px;padding:3px 7px;margin-left:6px">PARTNER PAGE</span>
-    </div>
+    <a class="logo" href="#" style="gap:3px">
+      <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:27px;color:#111;letter-spacing:-.01em;line-height:1">CC⁺</span>
+      <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:16px;color:#111;line-height:1">cleanchain⁺</span>
+    </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a class="active" onclick="scrollToContact()">Partner</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Join Us</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Locator</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
 
     <div class="nav-right">
-      <div class="nav-icon">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+      <div class="nav-icon" style="background:none">
+        <svg viewBox="0 0 24 24" style="stroke:var(--teal)"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+      </div>
+      <div class="nav-icon" style="background:none">
+        <svg viewBox="0 0 24 24" style="stroke:var(--teal)"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18" stroke-linecap="round"/></svg>
       </div>
     </div>
   </nav>
 
 <div class="page active" id="page-equip">
 
-    <div class="eq-hero">
+    <div class="eq-hero" style="background:linear-gradient(120deg,rgba(8,20,35,.72),rgba(8,20,35,.4)),url('images/28031.jpg') center/cover no-repeat, linear-gradient(135deg,#111c2a 0%,#1a2d3a 60%,#0d1e2e 100%)">
       <div class="eq-hc">
-        <div class="lp-tag">Become a Partner</div>
+        <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:14px">Become a Partner</div>
         <h1 class="lp-h1">Grow with<br>CleanChain.</h1>
         <p class="lp-lead">We're looking for passionate distributors and regional partners to bring CleanChain's commercial laundry solutions to new markets. Let's build something together.</p>
-        <button class="btn-solid" onclick="goToContact()">Get in Touch ›</button>
+        <button class="btn-ghost" onclick="goToContact()">Get in Touch <span class="btn-arr">»</span></button>
       </div>
     </div>
 
     <div class="eq-body">
 
-      <div id="who-we-serve" style="margin-bottom:70px">
+      <div id="who-we-serve" style="margin-bottom:0">
         <div class="sec-title" style="margin-bottom:7px">Who We Serve</div>
         <p class="sec-sub">Discover how CleanChain partners with your business—select your path below.</p>
-        <div class="aud-tabs">
-          <button class="aud-tab active" data-aud="distributor" onclick="selectAudience('distributor')">Distributor</button>
-          <button class="aud-tab" data-aud="owner" onclick="selectAudience('owner')">Laundromat Owner</button>
-          <button class="aud-tab" data-aud="opl" onclick="selectAudience('opl')">On Premise Laundry</button>
-          <button class="aud-tab" data-aud="asp" onclick="selectAudience('asp')">ASP Partner</button>
+
+        <div class="wws-row">
+          <div>
+            <h3 class="aud-h">Become a Regional Distributor</h3>
+            <p class="aud-p">Scale your business with a tiered growth ladder—unlocking higher margins, expanding territory rights, and direct factory support as you grow.</p>
+            <div class="wws-list">
+              <div><div class="wws-item-title"><span class="dot">◆</span>Become a Regional Distributor</div><div class="wws-item-desc">Exclusive regional sales rights</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Competitive Margins</div><div class="wws-item-desc">Exclusive wholesale pricing = margin protection</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Direct Sales Leads</div><div class="wws-item-desc">Inquiries routed straight to your team</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Growth Ladder Model</div><div class="wws-item-desc">Grow your business with escalating margin tiers</div></div>
+            </div>
+            <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Apply to Become a Distributor »</button>
+          </div>
+          <div class="wws-photo" style="background:linear-gradient(135deg,#e7ded0,#c7d6e6) url('images/distributor-map.jpg') center/cover no-repeat"></div>
         </div>
 
-        <div class="aud-panel" data-aud="distributor" style="display:block">
-          <div class="aud-panel-grid">
-            <div>
-              <h3 class="aud-h">Become a Regional Distributor</h3>
-              <p class="aud-p">Scale your business with a tiered growth ladder—unlocking higher margins, expanding territory rights, and direct factory support as you grow.</p>
-              <div class="aud-chip-grid">
-                <div class="aud-chip"><span class="emo">🗺️</span><div><b>Protected Territory</b><small>Exclusive regional sales rights</small></div></div>
-                <div class="aud-chip"><span class="emo">💰</span><div><b>Competitive Margins</b><small>Exclusive wholesale pricing = margin protection</small></div></div>
-                <div class="aud-chip"><span class="emo">🎯</span><div><b>Direct Sales Leads</b><small>Inquiries routed straight to your team</small></div></div>
-                <div class="aud-chip"><span class="emo">🎓</span><div><b>Growth Ladder Model</b><small>Grow your business with escalating margin tiers</small></div></div>
-              </div>
-              <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Apply to Become a Distributor ›</button>
+        <div class="wws-row reverse">
+          <div>
+            <h3 class="aud-h">Laundromat Owner / Operator</h3>
+            <p class="aud-p">Double your store revenue per square foot with Takurox combo washer-dryers — delivering lower utility costs, faster throughput, and space-saving efficiency.</p>
+            <div class="wws-list">
+              <div><div class="wws-item-title"><span class="dot">◆</span>Upgrade Pricing</div><div class="wws-item-desc">Special rates on new equipment</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Demo Store</div><div class="wws-item-desc">Become a regional showcase</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Layout Support</div><div class="wws-item-desc">Smarter floor plans, less risk</div></div>
             </div>
-            <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
+            <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Get a Laundromat Quote »</button>
           </div>
+          <div class="wws-photo" style="background:linear-gradient(135deg,#dfe7ee,#c3d2e0) url('images/laundromat.jpg') center/cover no-repeat"></div>
         </div>
 
-        <div class="aud-panel" data-aud="owner" style="display:none">
-          <div class="aud-panel-grid">
-            <div>
-              <h3 class="aud-h">Laundromat Owner / Operator</h3>
-              <p class="aud-p">Double your store revenue per square foot with Takurox combo washer-dryers — delivering lower utility costs, faster throughput, and space-saving efficiency.</p>
-              <div class="aud-chip-grid">
-                <div class="aud-chip"><span class="emo">🔧</span><div><b>Upgrade Pricing</b><small>Special rates on new equipment</small></div></div>
-                <div class="aud-chip"><span class="emo">🏆</span><div><b>Demo Store</b><small>Become a regional showcase</small></div></div>
-                <div class="aud-chip"><span class="emo">📐</span><div><b>Layout Support</b><small>Smarter floor plans, less risk</small></div></div>
-              </div>
-              <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Get a Laundromat Quote ›</button>
+        <div class="wws-row">
+          <div>
+            <h3 class="aud-h">On-Premise Laundry (OPL) Solutions</h3>
+            <p class="aud-p">A single partner, a complete system — from initial planning to lifetime maintenance.</p>
+            <div class="wws-list">
+              <div><div class="wws-item-title"><span class="dot">◆</span>Tailored Space Planning</div><div class="wws-item-desc">Custom-sized solutions engineered for your physical footprint and daily throughput volume.</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Cost &amp; ROI Analysis</div><div class="wws-item-desc">In-depth comparative analysis evaluating outsourced linen services vs. in-house operational costs.</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Customized SLA Plans</div><div class="wws-item-desc">Flexible service level agreements and maintenance tiers aligned with your facility's operational demands.</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>IoT &amp; Telemetry Monitoring</div><div class="wws-item-desc">Real-time machine health tracking, usage analytics, and remote diagnostics to prevent unexpected downtime.</div></div>
             </div>
-            <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="var(--teal)" stroke="none"/></svg></div>
+            <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Book an OPL Assessment »</button>
           </div>
+          <div class="wws-photo" style="background:linear-gradient(135deg,#f0e9d8,#e6cfd2) url('images/opl-analytics.jpg') center/cover no-repeat"></div>
         </div>
 
-        <div class="aud-panel" data-aud="opl" style="display:none">
-          <div class="aud-panel-grid">
-            <div>
-              <h3 class="aud-h">On-Premise Laundry (OPL) Solutions</h3>
-              <p class="aud-p">A single partner, a complete system — from initial planning to lifetime maintenance.</p>
-              <div class="aud-chip-grid">
-                <div class="aud-chip"><span class="emo">📋</span><div><b>Tailored Space Planning</b><small>Custom-sized solutions engineered for your physical footprint and daily throughput volume.</small></div></div>
-                <div class="aud-chip"><span class="emo">📊</span><div><b>Cost &amp; ROI Analysis</b><small>In-depth comparative analysis evaluating outsourced linen services vs. in-house operational costs.</small></div></div>
-                <div class="aud-chip"><span class="emo">🛠️</span><div><b>Customized SLA Plans</b><small>Flexible service level agreements and maintenance tiers aligned with your facility's operational demands.</small></div></div>
-                <div class="aud-chip"><span class="emo">📡</span><div><b>IoT &amp; Telemetry Monitoring</b><small>Real-time machine health tracking, usage analytics, and remote diagnostics to prevent unexpected downtime.</small></div></div>
-              </div>
-              <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Book an OPL Assessment ›</button>
+        <div class="wws-row reverse" style="margin-bottom:64px">
+          <div>
+            <h3 class="aud-h">Authorized Service Provider (ASP)</h3>
+            <p class="aud-p">Partner with CleanChain as a certified installation and service partner — expanding your service revenue with direct factory jobs and maintenance contracts.</p>
+            <div class="wws-list">
+              <div><div class="wws-item-title"><span class="dot">◆</span>Factory Certification</div><div class="wws-item-desc">Official CleanChain &amp; Takurox service endorsement</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Installation &amp; Service Jobs</div><div class="wws-item-desc">Direct regional dispatch for installs, warranty work &amp; repairs</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Direct OEM Parts &amp; Tech Line</div><div class="wws-item-desc">Priority OEM parts inventory &amp; direct engineering support</div></div>
+              <div><div class="wws-item-title"><span class="dot">◆</span>Recurring SLA Revenue</div><div class="wws-item-desc">Earn steady margin on ongoing commercial maintenance contracts &amp; service plans</div></div>
             </div>
-            <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><line x1="7" y1="6" x2="10" y2="6"/></svg></div>
+            <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Join Our Service Partner Network »</button>
           </div>
-        </div>
-
-        <div class="aud-panel" data-aud="asp" style="display:none">
-          <div class="aud-panel-grid">
-            <div>
-              <h3 class="aud-h">Authorized Service Provider (ASP)</h3>
-              <p class="aud-p">Partner with CleanChain as a certified installation and service partner — expanding your service revenue with direct factory jobs and maintenance contracts.</p>
-              <div class="aud-chip-grid">
-                <div class="aud-chip"><span class="emo">🏅</span><div><b>Factory Certification</b><small>Official CleanChain &amp; Takurox service endorsement</small></div></div>
-                <div class="aud-chip"><span class="emo">🧰</span><div><b>Installation &amp; Service Jobs</b><small>Direct regional dispatch for installs, warranty work &amp; repairs</small></div></div>
-                <div class="aud-chip"><span class="emo">⚡</span><div><b>Direct OEM Parts &amp; Tech Line</b><small>Priority OEM parts inventory &amp; direct engineering support</small></div></div>
-                <div class="aud-chip"><span class="emo">💵</span><div><b>Recurring SLA Revenue</b><small>Earn steady margin on ongoing commercial maintenance contracts &amp; service plans</small></div></div>
-              </div>
-              <button class="btn-solid" style="background:var(--teal);color:#fff" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='var(--teal)'" onclick="goToContact()">Join Our Service Partner Network ›</button>
-            </div>
-            <div class="aud-icon-box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4"><path d="M14.7 6.3a4 4 0 01-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 015.4-5.4z"/></svg></div>
-          </div>
+          <div class="wws-photo" style="background:linear-gradient(135deg,#dce6f0,#b9cbe0) url('images/asp-callcenter.jpg') center/cover no-repeat"></div>
         </div>
       </div>
 
-      <div class="sec-title">Partner Benefits</div>
-      <p class="sec-sub">Built on three core pillars of partner success.</p>
-      <div class="feat-grid" style="margin-bottom:64px">
-        <div class="feat-card">
-          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <div class="feat-h">Proven Business Model</div>
-          <p class="feat-p">Decades of commercial experience distilled into a replicable operating framework — from pricing strategy to customer acquisition, we provide expert guidance every step of the way.</p>
+      <div class="sec-title" style="text-align:center">Partner Benefits</div>
+      <p class="sec-sub" style="text-align:center">Built on three core pillars of partner success.</p>
+      <div class="benefit-grid">
+        <div>
+          <div class="benefit-icon"><svg width="60" height="60" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="27" fill="var(--teal-pale)"/><circle cx="28" cy="19" r="5" stroke="var(--teal)" stroke-width="1.6"/><rect x="14" y="26" width="28" height="18" rx="3" stroke="var(--teal)" stroke-width="1.6"/><path d="M22 26v-3a6 6 0 0112 0v3" stroke="var(--teal)" stroke-width="1.6"/></svg></div>
+          <div class="benefit-h">Proven Business Model</div>
+          <p class="benefit-p">Decades of commercial experience distilled into a replicable operating framework — from pricing strategy to customer acquisition, we provide expert guidance every step of the way.</p>
         </div>
-        <div class="feat-card">
-          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <div class="feat-h">Professional Layout Planning</div>
-          <p class="feat-p">End-to-end support for site layout and workflow optimization, ensuring every square foot of space is engineered toward maximum operational profitability.</p>
+        <div>
+          <div class="benefit-icon"><svg width="60" height="60" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="27" fill="var(--teal-pale)"/><rect x="16" y="14" width="18" height="28" rx="2" stroke="var(--teal)" stroke-width="1.6"/><line x1="20" y1="20" x2="30" y2="20" stroke="var(--teal)" stroke-width="1.6"/><line x1="20" y1="25" x2="30" y2="25" stroke="var(--teal)" stroke-width="1.6"/><circle cx="37" cy="34" r="7" stroke="var(--teal)" stroke-width="1.6"/><circle cx="37" cy="34" r="2" fill="var(--teal)"/></svg></div>
+          <div class="benefit-h">Professional Layout Planning</div>
+          <p class="benefit-p">End-to-end support for site layout and workflow optimization, ensuring every square foot of space is engineered toward maximum operational profitability.</p>
         </div>
-        <div class="feat-card">
-          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="feat-h">Technical Training &amp; Support</div>
-          <p class="feat-p">Comprehensive product specification training, expert installation guidance, and dedicated factory warranty and spare parts support.</p>
+        <div>
+          <div class="benefit-icon"><svg width="60" height="60" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="27" fill="var(--teal-pale)"/><path d="M20 30a8 8 0 1116 0c0 3-2 4-2 7h-12c0-3-2-4-2-7z" stroke="var(--teal)" stroke-width="1.6"/><line x1="23" y1="41" x2="33" y2="41" stroke="var(--teal)" stroke-width="1.6"/><line x1="28" y1="15" x2="28" y2="18" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="benefit-h">Technical Training &amp; Support</div>
+          <p class="benefit-p">Comprehensive product specification training, expert installation guidance, and dedicated factory warranty and spare parts support.</p>
         </div>
       </div>
 
@@ -614,25 +617,25 @@ nav.light .nav-icon svg{stroke:var(--mid)}
 
       </div>
 
-      <div class="sec-title">Support & Service</div>
-      <p class="sec-sub">Beyond equipment delivery — a dedicated partner after the sale.</p>
-      <div class="steps-row" style="margin-bottom:64px">
-        <div class="step">
+      <div class="sec-title" style="text-align:center">Support & Service</div>
+      <p class="sec-sub" style="text-align:center">Beyond equipment delivery — a dedicated partner after the sale.</p>
+      <div class="support-grid">
+        <div class="support-card">
           <div class="step-n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.18 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
           <div class="feat-h">Dedicated Support Line</div>
           <p class="step-p">Direct access to a regional support manager for technical assistance, replacement parts, and priority escalations.</p>
         </div>
-        <div class="step">
+        <div class="support-card">
           <div class="step-n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <div class="feat-h">Sales &amp; Marketing Collateral</div>
           <p class="step-p">A complete suite of localized brochures, specification sheets, and digital marketing assets — updated regularly.</p>
         </div>
-        <div class="step">
+        <div class="support-card">
           <div class="step-n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="feat-h">Co-Marketing Initiatives</div>
           <p class="step-p">Joint digital campaigns, trade show participation, and regional PR support to accelerate your market entry and brand visibility.</p>
         </div>
-        <div class="step">
+        <div class="support-card">
           <div class="step-n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div class="feat-h">After-Sales Care</div>
           <p class="step-p">Comprehensive warranty administration, spare parts inventory management, and scheduled maintenance programs for end customers.</p>
